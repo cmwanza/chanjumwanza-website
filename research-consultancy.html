@@ -14,20 +14,12 @@
 .bubbles li:nth-child(4n+3){background:var(--ink);color:#fff;font-size:1.05rem;padding:19px 30px}
 .bubbles li:nth-child(4n){background:#fff;color:var(--ink);border:2px solid #0B7A5A}
 .bubbles li:hover{transform:translateY(-3px)}
-.svc-wrap{display:grid;grid-template-columns:1fr 1.15fr;gap:28px;margin-top:26px;align-items:stretch}
-.svc-list{display:grid;gap:10px}
-.svc-tab{text-align:left;background:#fff;border:1px solid var(--line);border-left:6px solid var(--c);border-radius:12px;padding:16px 18px;cursor:pointer;font-family:var(--sans);color:var(--ink);transition:background .2s}
-.svc-tab b{display:block;font:800 1.15rem var(--serif);margin-bottom:3px}
-.svc-tab span{display:block;font-size:.9rem;color:var(--slate);line-height:1.4}
-.svc-tab:hover{background:var(--mist)}
-.svc-tab[aria-selected="true"]{background:var(--ink);color:#fff;border-color:var(--ink);border-left-color:var(--c)}
-.svc-tab[aria-selected="true"] span{color:#C9CED6}
-.svc-panels{background:var(--mist);border-radius:16px;padding:34px;display:flex;flex-direction:column;justify-content:center}
-.svc-panel h3{font-size:1.7rem}
-.svc-sub{font:600 1.05rem/1.35 var(--sans);color:var(--c);margin:0 0 14px}
-.svc-panel p:last-child{font-size:1.08rem}
-@media(max-width:820px){.svc-wrap{grid-template-columns:1fr}.svc-panels{padding:26px}}
-@media(prefers-reduced-motion:reduce){.svc-tab{transition:none}}
+.svc-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:18px;margin-top:26px}
+.svc-card{flex:1 1 300px;max-width:calc(33.333% - 12px);background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 24px}
+.svc-card h3{margin-bottom:10px}
+.svc-call{background:color-mix(in srgb,var(--c) 12%,#fff);border-left:4px solid var(--c);border-radius:0 8px 8px 0;padding:10px 14px;margin:0 0 12px;font-weight:600;font-size:.93rem;line-height:1.4;color:var(--ink)}
+@media(max-width:1000px){.svc-card{max-width:calc(50% - 9px)}}
+@media(max-width:640px){.svc-card{max-width:100%;flex-basis:100%}}
 @media(max-width:820px){.intro-grid{grid-template-columns:1fr;gap:28px}.intro-photo{max-width:380px}}
 @media(prefers-reduced-motion:reduce){.bubbles li{transition:none}}
 </style></head><body>
@@ -43,10 +35,13 @@
 <img class="intro-photo" src="images/chanju-speaking.jpg" alt="Chanju Mwanza speaking on a panel about justice-oriented climate change education"></div></div>
 
 <section style="padding-top:24px"><div class="wrap"><h2>What I can help with</h2>
-<div class="svc-wrap"><div class="svc-list" role="tablist" aria-label="Services" aria-orientation="vertical"><button type="button" class="svc-tab" role="tab" id="tab0" aria-controls="panel0" aria-selected="true" tabindex="0" style="--c:var(--green)"><b>Research and insight</b><span>For organisations that need credible evidence rooted in lived experience.</span></button><button type="button" class="svc-tab" role="tab" id="tab1" aria-controls="panel1" aria-selected="false" tabindex="-1" style="--c:var(--copper)"><b>Policy and advocacy</b><span>For organisations that need to turn evidence into influence.</span></button><button type="button" class="svc-tab" role="tab" id="tab2" aria-controls="panel2" aria-selected="false" tabindex="-1" style="--c:var(--green)"><b>Community engagement</b><span>For organisations that want communities to help shape their work, not just receive it.</span></button><button type="button" class="svc-tab" role="tab" id="tab3" aria-controls="panel3" aria-selected="false" tabindex="-1" style="--c:var(--copper)"><b>Facilitation and training</b><span>For teams, networks and partnerships that need a skilled, neutral facilitator.</span></button><button type="button" class="svc-tab" role="tab" id="tab4" aria-controls="panel4" aria-selected="false" tabindex="-1" style="--c:var(--green)"><b>Storytelling and communications</b><span>For organisations that want their research read, understood and used.</span></button></div><div class="svc-panels"><div class="svc-panel" role="tabpanel" id="panel0" aria-labelledby="tab0"><h3>Research and insight</h3><p class="svc-sub" style="--c:var(--green)">For organisations that need credible evidence rooted in lived experience.</p><p>I design and deliver qualitative, participatory research, including literature reviews, stakeholder consultations, interviews, focus groups and creative research approaches.</p></div><div class="svc-panel" role="tabpanel" id="panel1" aria-labelledby="tab1" hidden><h3>Policy and advocacy</h3><p class="svc-sub" style="--c:var(--copper)">For organisations that need to turn evidence into influence.</p><p>I help organisations translate evidence into action through policy analysis, advocacy strategies, briefings, consultations and stakeholder engagement.</p></div><div class="svc-panel" role="tabpanel" id="panel2" aria-labelledby="tab2" hidden><h3>Community engagement</h3><p class="svc-sub" style="--c:var(--green)">For organisations that want communities to help shape their work, not just receive it.</p><p>I design inclusive approaches that enable communities, young people and stakeholders to shape research, programmes and policy.</p></div><div class="svc-panel" role="tabpanel" id="panel3" aria-labelledby="tab3" hidden><h3>Facilitation and training</h3><p class="svc-sub" style="--c:var(--copper)">For teams, networks and partnerships that need a skilled, neutral facilitator.</p><p>I facilitate workshops, roundtables, learning sessions and strategic discussions that support learning, collaboration and action.</p></div><div class="svc-panel" role="tabpanel" id="panel4" aria-labelledby="tab4" hidden><h3>Storytelling and communications</h3><p class="svc-sub" style="--c:var(--green)">For organisations that want their research read, understood and used.</p><p>I use writing, narrative and creative engagement to help organisations communicate research, share knowledge and connect with diverse audiences.</p></div></div></div></div></section>
-<script>
-(function(){var t=document.querySelectorAll(".svc-tab"),p=document.querySelectorAll(".svc-panel");function go(i,f){t.forEach(function(b,j){var on=j===i;b.setAttribute("aria-selected",on);b.tabIndex=on?0:-1;p[j].hidden=!on});if(f)t[i].focus()}t.forEach(function(b,i){b.addEventListener("click",function(){go(i)});b.addEventListener("keydown",function(e){if(e.key==="ArrowDown"||e.key==="ArrowRight"){e.preventDefault();go((i+1)%t.length,1)}if(e.key==="ArrowUp"||e.key==="ArrowLeft"){e.preventDefault();go((i-1+t.length)%t.length,1)}})})})();
-</script>
+<div class="svc-grid">
+<div class="svc-card" style="--c:var(--green)"><h3>Research and insight</h3><p class="svc-call">For organisations that need credible evidence rooted in lived experience.</p><p>I design and deliver qualitative, participatory research, including literature reviews, stakeholder consultations, interviews, focus groups and creative research approaches.</p></div>
+<div class="svc-card" style="--c:var(--copper)"><h3>Policy and advocacy</h3><p class="svc-call">For organisations that need to turn evidence into influence.</p><p>I help organisations translate evidence into action through policy analysis, advocacy strategies, briefings, consultations and stakeholder engagement.</p></div>
+<div class="svc-card" style="--c:var(--green)"><h3>Community engagement</h3><p class="svc-call">For organisations that want communities to help shape their work, not just receive it.</p><p>I design inclusive approaches that enable communities, young people and stakeholders to shape research, programmes and policy.</p></div>
+<div class="svc-card" style="--c:var(--copper)"><h3>Facilitation and training</h3><p class="svc-call">For teams, networks and partnerships that need a skilled, neutral facilitator.</p><p>I facilitate workshops, roundtables, learning sessions and strategic discussions that support learning, collaboration and action.</p></div>
+<div class="svc-card" style="--c:var(--green)"><h3>Storytelling and communications</h3><p class="svc-call">For organisations that want their research read, understood and used.</p><p>I use writing, narrative and creative engagement to help organisations communicate research, share knowledge and connect with diverse audiences.</p></div>
+</div></div></section>
 
 <section class="alt"><div class="wrap"><h2 style="text-align:center">Areas of expertise</h2>
 <ul class="bubbles">
@@ -80,11 +75,6 @@
 <div><h3 style="font-size:1.1rem">Research and development</h3>
 <ul style="padding-left:20px"><li>Kudzai Meda Chilufya</li><li>Tamara Fetters</li><li>Professor Ernestina Coast</li></ul></div>
 </div></div>
-
-<div class="card" style="margin-top:24px">
-<h3>The Zambian Narratives Project</h3>
-<p>Culturally relevant, bilingual children's books and read-along videos in English and Zambia's national languages.</p>
-<p style="margin-top:16px"><a class="btn solid" href="zambian-narratives-project.html">Explore the project</a></p></div>
 
 <p style="margin-top:32px">Get in touch to request examples of research reports, policy briefings, facilitation work and storytelling projects.</p>
 </div></section>
